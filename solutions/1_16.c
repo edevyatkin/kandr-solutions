@@ -1,7 +1,9 @@
 /* 1.9. Массивы символов */
 
+/* Задача 1.16 */
+
 #include <stdio.h>
-#define MAXLINE 10    /* максимальная длина строки в потоке */
+#define MAXLINE 20    /* максимальная длина строки в потоке */
 
 int getline_lim(char line[], int maxline);
 void copy(char to[], char from[]);
