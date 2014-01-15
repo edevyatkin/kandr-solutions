@@ -3,8 +3,8 @@
 /* Задача 1.18 */
 
 #include <stdio.h>
-#define MAXLINE 20     /* максимальная длина строки в потоке */
-#define CAPACITY 100   /* емкость буфера (принимается большей, чем MAXLINE) */
+#define MAXLINE 10     /* максимальная длина строки в потоке */
+#define CAPACITY 100  /* емкость буфера (принимается большей, чем MAXLINE) */
 
 int getline_lim(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -14,23 +14,39 @@ int main()
 {
     char line[MAXLINE];     /* текущая введенная строка */
     char buffer[CAPACITY];  /* буфер для сохранения обработанных строк входного потока */
-    int len;                /* длина считанной строки */
     int i;  
     int pos;                /* позиция в буфере, отражает заполненность */   
     
     i = pos = 0;               
     
-    while ((len = getline_lim(line, MAXLINE)) > 0) {
+    while ((getline_lim(line, MAXLINE)) > 0) {
         i = 0;
         while ((buffer[pos] = line[i]) != '\0')
         {
-            if (i == 0 && line[i] != '\n' || 1)
+            if (buffer[pos] == '\n') {
+                while (buffer[pos-1] == '\n' 
+                    || buffer[pos-1] == '\t' 
+                    || buffer[pos-1] == ' ')
+                        --pos;
+                buffer[pos] = '\n';
+            }
+            if (pos == CAPACITY-2) { /* сбрасываем буфер */
+                buffer[CAPACITY-1] = '\0';
+                printf("-----\n");
+                printf("Обработанные строки\n");
+                printf("-----\n");
+                printf("%s\n", buffer);
+                printf("-----\n");
+                pos = 0;
+            }
+            else
                 ++pos;
             ++i;
         }
     }
     
-    printf("%s", buffer);
+    buffer[pos+1] = '\0';
+    printf("Остаток: %s\n", buffer); /* сбрасываем буфер */
 
     return 0;
 }
