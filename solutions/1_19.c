@@ -3,13 +3,13 @@
 /* Задача 1.19 */
 
 #include <stdio.h>
-#define MAXLINE 10     /* максимальная длина строки в потоке */
+#define MAXLINE 1000     /* максимальная длина строки в потоке */
 
 int getline_lim(char line[], int maxline);
 void copy(char to[], char from[]);
 void reverse(char s[]);
 
-/* удаление в конце каждой строки пробелов и табуляций. удаление пустых строк */
+/* вывод строк входного потока по одной, с символами в обратном порядке */
 int main()
 {
     char line[MAXLINE];
@@ -37,17 +37,6 @@ int getline_lim(char s[], int lim)
     return i;
 }
 
-/* copy: копирует строку from в to;
- * длина to считается достаточной */
-void copy(char to[], char from[])
-{
-    int i;
-    
-    i = 0;
-    while ((to[i] = from[i]) != '\0')
-        ++i;
-}
-
 void reverse(char s[])
 {
     char c;
@@ -58,7 +47,10 @@ void reverse(char s[])
     while (s[j] != '\0')
         ++j;
     
-    --j;
+    if (s[j-1] == '\n')
+        j = j-2;
+    else
+        j = j-1;
     
     while (i < j) {
         c = s[j];

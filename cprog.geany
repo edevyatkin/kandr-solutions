@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=29
+current_page=30
 FILE_NAME_0=26;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fhello.c;0;4
 FILE_NAME_1=20;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Ffahr_while.c;0;4
 FILE_NAME_2=27;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Ffahr_for.c;0;4
@@ -53,7 +53,8 @@ FILE_NAME_25=150;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fsolutions%2F1_15.c;
 FILE_NAME_26=0;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fpower2.c;0;4
 FILE_NAME_27=663;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Farray_chars.c;0;4
 FILE_NAME_28=917;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fsolutions%2F1_16.c;0;4
-FILE_NAME_29=974;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fsolutions%2F1_17.c;0;4
+FILE_NAME_29=0;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fsolutions%2F1_17.c;0;4
+FILE_NAME_30=1165;C;0;16;0;1;0;%2Fhome%2Fedevyatkin%2Fcprog%2Fsolutions%2F1_18.c;0;4
 
 [VTE]
 last_dir=/home/edevyatkin
