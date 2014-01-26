@@ -7,7 +7,7 @@
 #define COLS 8 
 
 int getline_lim(char line[], int maxline);
-void detab(char s[]);
+void detab(char s[], int cols);
 
 /*  */
 int main()
@@ -15,8 +15,9 @@ int main()
     char s[MAXLINE];
     
     while (getline_lim(s,MAXLINE) > 0) {
-        detab(s);
-        printf("%s", s);
+        printf("Оригинальная строка:\t %s", s);
+        detab(s,COLS);
+        printf("Преобразованная строка:\t %s", s);
     }
     
     return 0;
@@ -36,14 +37,16 @@ int getline_lim(char s[], int lim)
     return i;
 }
 
-void detab(char s[])
+void detab(char s[], int cols)
 {
     int i, spaces;
+    char buffer[100];
+    
     i = spaces = 0;
     
     while (s[i] != '\0') {
         if (s[i] == '\t') {
-            spaces = (i/COLS + 1)*COLS - i;
+            spaces = (i/cols + 1)*cols - i;
             while (spaces > 0) {
                 s[i] = ' ';
                 ++i;
