@@ -24,6 +24,10 @@ int main()
                 --spaces;
             }
         }
+        else if (c == '\n') {
+            putchar(c);
+            i = 0;
+        }
         else {
             putchar(c);
             ++i;
